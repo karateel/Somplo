@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, forwardRef, OnInit} from '@angular/core';
+import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css']
+  styleUrls: ['./form.component.css'],
+  providers: [{
+    provide: NG_VALUE_ACCESSOR,
+  useExisting: forwardRef(() => FormComponent),
+    multi: true
+  }]
 })
-export class FormComponent implements OnInit {
+export class FormComponent implements ControlValueAccessor {
 
-  constructor() { }
+  writeValue(): void{
 
-  ngOnInit(): void {
   }
+  registerOnChange(fn: any) {
 
+  }
+  registerOnTouched(fn: any) {
+
+  }
 }
