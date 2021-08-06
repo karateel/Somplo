@@ -10,7 +10,7 @@ export class FormComponent implements OnInit{
   url: string | ArrayBuffer = '';
   linkControl: FormControl;
 
-  onSelectFile(event) {
+  onUploadPic(event) {
     if (event.target.files && event.target.files[0]) {
       let reader = new FileReader();
       reader.readAsDataURL(event.target.files[0]);
