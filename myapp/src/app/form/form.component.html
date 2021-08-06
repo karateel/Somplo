@@ -1,5 +1,10 @@
 <form>
-  <input type="file">
-  <input type="url" >
-  <button type="submit">Send</button>
+  <input type="url" placeholder="Put link here!" [ngModel]="link" #link>
+  <br>
+  <input type='file' (change)="onSelectFile($event)" >
+  <br>
 </form>
+
+<div class="container">
+    <a href="{{ link.value }}" class="block__link"><img [src]="url" height="200px" class="picture" alt=""></a>
+</div>

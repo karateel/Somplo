@@ -1,25 +1,25 @@
-import {Component, forwardRef, OnInit} from '@angular/core';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
+import {Component, OnInit} from '@angular/core';
+import {FormControl} from "@angular/forms";
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css'],
-  providers: [{
-    provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => FormComponent),
-    multi: true
-  }]
 })
-export class FormComponent implements ControlValueAccessor {
+export class FormComponent implements OnInit{
+  url: string | ArrayBuffer = '';
+  linkControl: FormControl;
 
-  writeValue(): void{
-
+  onSelectFile(event) {
+    if (event.target.files && event.target.files[0]) {
+      let reader = new FileReader();
+      reader.readAsDataURL(event.target.files[0]);
+      reader.onload = (event) => {
+        this.url = event.target.result;
+      }
+    }
   }
-  registerOnChange(fn: any) {
-
-  }
-  registerOnTouched(fn: any) {
-
+  ngOnInit() {
+    this.linkControl = new FormControl()
   }
 }

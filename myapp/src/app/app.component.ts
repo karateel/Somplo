@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl} from "@angular/forms";
 
 @Component({
   selector: 'app-root',
@@ -8,9 +7,8 @@ import {FormControl} from "@angular/forms";
 })
 export class AppComponent implements OnInit{
   title = 'myapp';
-  adver: FormControl;
 
   ngOnInit() {
-    this.adver = new FormControl();
+
   }
 }

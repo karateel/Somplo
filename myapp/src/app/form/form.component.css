@@ -1,3 +1,55 @@
+@keyframes leftToRight{
+  0%{
+    left: 0px;
+  }
+  25%{
+    left: 125px;
+  }
+  50%{
+    left: 250px;
+  }
+  75%{
+    left: 375px;
+  }
+  100%{
+    left: 500px;
+  }
+}
+
+*{
+  box-sizing: border-box;
+}
 form{
   display:block;
 }
+
+input{
+  margin-top: 15px
+}
+.container{
+  margin-top: 20px;
+
+}
+.picture{
+  display: block;
+  animation-name: leftToRight;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.block__link{
+  left: 0px;
+  position: relative;
+  margin: 10px 0px;
+  display: block;
+  animation-name: leftToRight;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  width: 200px;
+  max-height: 200px;
+}
+
+
